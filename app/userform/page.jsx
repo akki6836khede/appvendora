@@ -52,8 +52,8 @@ const page = () => {
 
   return (
     <div className='w-[100vw] h-[100vh] flex justify-center items-center bg-black'>
-      <div className="left w-[60%] h-screen bg-[url('/generated-image.png')] bg-cover bg-center"></div>
-      <div className="right w-[40%] h-screen flex flex-col gap-8 justify-start items-center">
+      <div className="left md:flex lg:flex hidden md:w-[30%] lg:w-[60%] h-screen bg-[url('/generated-image.png')] bg-cover bg-center"></div>
+      <div className="right w-[100%] md:w-[70%] lg:w-[40%] h-screen flex flex-col gap-8 justify-start items-center">
         <div className="upper w-[97%] h-[20%] flex justify-start items-center">
           <Image src="/FullLogo_Transparent.png" width={200} height={200} alt="pharma logo" />
         </div>

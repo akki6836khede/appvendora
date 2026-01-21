@@ -7,31 +7,30 @@ import React, { useEffect, useState } from 'react'
 import checkUserExistence from "@/actions/checkUserExistence"
 
 const page = () => {
-    const { data: session } = useSession()
+    const { data: session, status } = useSession()
+    if (!session) return;
     const router = useRouter()
 
-    useEffect(() => {
-        if (!session) return;
+    const checkUser = async () => {
+        const email = session.user.email;
+        const user = await checkUserExistence(email);
 
-        const checkUser = async () => {
-            const { email } = session.user;
-            const user = await checkUserExistence(email);
+        if (!user) {
+            router.replace("/rolepage");
+            return;
+        }
 
-            if (user) {
-                if (user.role === "customer") {
-                    router.push(`/userpage/${email}`);
-                } else if (user.role === "deliverypartner") {
-                    router.push(`/delivery/${email}`);
-                } else if (user.role === "shopkeeper") {
-                    router.push(`/shopkeeper/${email}`);
-                }
-            } else {
-                router.push("/rolepage");
-            }
-        };
+        if (user.role === "customer") {
+            router.replace(`/userpage/${email}`);
+        } else if (user.role === "deliverypartner") {
+            router.replace(`/delivery/${email}`);
+        } else if (user.role === "shopkeeper") {
+            router.replace(`/shopkeeper/${email}`);
+        }
+    };
 
-        checkUser();
-    }, [session, router]);
+    checkUser();
+}, [session, status, router]);
     return (
         <div className='w-[100vw] h-[100vh] flex justify-center items-center bg-black'>
             <div className="left md:flex hidden md:w-[30%] lg:w-[60%] h-screen bg-[url('/generated-image.png')] bg-cover bg-center"></div>

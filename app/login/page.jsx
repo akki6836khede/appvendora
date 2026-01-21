@@ -4,7 +4,7 @@ import { useSession, signIn } from "next-auth/react"
 import Image from "next/image"
 import { useRouter } from "next/navigation"
 import React, { useEffect, useState } from 'react'
-import checkUserExistence from "@/actions/checkUserExistence"
+import checkUserExistence from "@/actions/checkUserExistence" 
 
 const page = () => {
     const { data: session, status } = useSession()

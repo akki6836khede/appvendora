@@ -12,14 +12,16 @@ export const authOptions = {
 
   secret: process.env.NEXTAUTH_SECRET,
 
-  callbacks: {
-    async session({ session }) {
-      if (session?.user?.email) {
-        const user = await checkUserExistence(session.user.email)
-        session.user.role = user?.role ?? null
-      }
-      return session
-    },
+callbacks: {
+  async session({ session }) {
+    console.log("SESSION CALLBACK RUNNING", session.user.email)
+
+    const user = await checkUserExistence(session.user.email)
+
+    console.log("USER FROM DB:", user)
+
+    session.user.role = user?.role ?? null
+    return session
   },
 }
 

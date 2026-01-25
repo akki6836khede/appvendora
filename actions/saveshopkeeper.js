@@ -10,9 +10,9 @@ import { authOptions } from "@/app/api/auth/[...nextauth]/route"
 import { v2 as cloudinary } from 'cloudinary'
 
 cloudinary.config({
-  cloud_name: 'drgvfdtx0',
-  api_key: '221124866534351',
-  api_secret: '3fSjHURAfQdlZTxbwgY8u-XQAuQ'
+  cloud_name: process.env.CLOUD_NAME,
+  api_key: process.env.CLOUDINARY_KEY,
+  api_secret: process.env.CLOUDINARY_SECRET
 })
 
 

@@ -1,26 +1,29 @@
-# Vendora
+# Vendora (E-commerce Platform)
 
-Vendora is a role-based local commerce and delivery platform built using Next.js, React, MongoDB, Tailwind CSS, and Razorpay.
+Vendora is a full-stack role-based e-commerce and local delivery platform built using Next.js, React, MongoDB, Tailwind CSS, and Razorpay.
 
-The platform connects local shopkeepers with local customers through local delivery partners, making the ecosystem more independent and supportive for local businesses and customers.
+The platform connects local shopkeepers with local customers through local delivery partners, creating an independent ecosystem for local businesses and nearby customers.
 
-Vendora helps local shop owners digitally manage and sell their products while enabling customers to order nearby products quickly with delivery support.
-
----
-
-# Application Flow
-
-Vendora works with three different roles:
-
-* Customer
-* Shopkeeper
-* Delivery Partner
-
-Each role has different access and functionality inside the application.
+Vendora helps local shop owners digitally manage and sell their products while enabling customers to order products from nearby shops with fast local delivery support.
 
 ---
 
-# Customer Features
+# Core Features
+
+* Role-Based Access Control
+* Google Authentication using NextAuth
+* Razorpay Payment Integration
+* Online Payment & Cash on Delivery
+* Local Delivery Management
+* Fully Responsive UI
+* Server Actions Based Backend
+* Dynamic Data Fetching using useSWR
+
+---
+
+# User Roles
+
+## Customer
 
 * Browse products from nearby shops
 * Add products to cart
@@ -33,7 +36,7 @@ Each role has different access and functionality inside the application.
 
 ---
 
-# Shopkeeper Features
+## Shopkeeper
 
 * Add products
 * Update products
@@ -44,13 +47,24 @@ Each role has different access and functionality inside the application.
 
 ---
 
-# Delivery Partner Features
+## Delivery Partner
 
 * View delivery orders in local areas
 * Accept delivery orders
 * Deliver products to customers
 * Update delivery status
 * Handle Cash on Delivery settlements
+
+---
+
+# Authentication
+
+Authentication is implemented using:
+
+* NextAuth
+* Google OAuth
+
+Secure login and role-based access are managed through NextAuth authentication flow.
 
 ---
 
@@ -84,6 +98,11 @@ Both online payment and Cash on Delivery options are available.
 
 * MongoDB
 
+## Authentication
+
+* NextAuth
+* Google OAuth
+
 ## Styling
 
 * Tailwind CSS
@@ -100,7 +119,7 @@ Both online payment and Cash on Delivery options are available.
 
 # Project Structure
 
-```bash id="t8qp1x"
+```bash id="0p4z2r"
 Vendora
 │
 ├── .next/
@@ -145,6 +164,10 @@ MongoDB is used for storing:
 * Delivery details
 * Payment-related data
 
+## Authentication Layer
+
+NextAuth with Google OAuth is used for secure authentication and role-based access control.
+
 ## Payment Layer
 
 Razorpay handles:
@@ -171,4 +194,3 @@ The application is fully responsive and optimized for:
 * Desktop Screens
 
 Tailwind CSS is used for styling and responsiveness.
-

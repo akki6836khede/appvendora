@@ -1,36 +1,174 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Vendora
 
-## Getting Started
+Vendora is a role-based local commerce and delivery platform built using Next.js, React, MongoDB, Tailwind CSS, and Razorpay.
 
-First, run the development server:
+The platform connects local shopkeepers with local customers through local delivery partners, making the ecosystem more independent and supportive for local businesses and customers.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+Vendora helps local shop owners digitally manage and sell their products while enabling customers to order nearby products quickly with delivery support.
+
+---
+
+# Application Flow
+
+Vendora works with three different roles:
+
+* Customer
+* Shopkeeper
+* Delivery Partner
+
+Each role has different access and functionality inside the application.
+
+---
+
+# Customer Features
+
+* Browse products from nearby shops
+* Add products to cart
+* Place orders
+* Choose payment method:
+
+  * Online Payment
+  * Cash on Delivery
+* Track order status
+
+---
+
+# Shopkeeper Features
+
+* Add products
+* Update products
+* Delete products
+* Manage inventory
+* View customer orders
+* Manage product availability
+
+---
+
+# Delivery Partner Features
+
+* View delivery orders in local areas
+* Accept delivery orders
+* Deliver products to customers
+* Update delivery status
+* Handle Cash on Delivery settlements
+
+---
+
+# Payment System
+
+Razorpay is integrated for:
+
+* Online customer payments
+* COD settlement handling for delivery partners
+
+Both online payment and Cash on Delivery options are available.
+
+---
+
+# Tech Stack
+
+## Frontend
+
+* Next.js
+* React.js
+* JavaScript
+
+## Backend
+
+* Next.js Server Actions
+
+> The project does not use traditional REST APIs.
+> Backend operations are handled using Next.js Server Actions.
+
+## Database
+
+* MongoDB
+
+## Styling
+
+* Tailwind CSS
+
+## State Management & Data Fetching
+
+* useSWR
+
+## Payment Gateway
+
+* Razorpay
+
+---
+
+# Project Structure
+
+```bash id="t8qp1x"
+Vendora
+│
+├── .next/
+├── actions/
+├── app/
+├── components/
+├── lib/
+├── models/
+├── node_modules/
+├── public/
+│
+├── .env.local
+├── .gitignore
+├── eslint.config.js
+├── jsconfig.json
+├── next.config.js
+├── package.json
+├── package-lock.json
+├── postcss.config.js
+└── README.md
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+# Architecture Overview
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Frontend Layer
 
-## Learn More
+Built using Next.js and React for creating responsive and interactive user interfaces.
 
-To learn more about Next.js, take a look at the following resources:
+## Backend Layer
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Server-side logic is handled using Next.js Server Actions instead of REST APIs.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Database Layer
 
-## Deploy on Vercel
+MongoDB is used for storing:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+* User data
+* Product information
+* Orders
+* Delivery details
+* Payment-related data
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Payment Layer
+
+Razorpay handles:
+
+* Online payments
+* COD settlements
+
+## State Management
+
+useSWR is used for:
+
+* Data fetching
+* Client-side caching
+* Dynamic UI updates
+
+---
+
+# Responsive Design
+
+The application is fully responsive and optimized for:
+
+* Mobile Devices
+* Tablets
+* Desktop Screens
+
+Tailwind CSS is used for styling and responsiveness.
+
